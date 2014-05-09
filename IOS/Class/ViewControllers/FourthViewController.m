@@ -19,14 +19,23 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [self setLbtnNormal];
+        self.title = @"你好";
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad2];
+    [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //    if (self.navigationController.viewControllers.count == 1 && !_ifInteractivePop) {
+
+    //    }
 }
 
 - (void)didReceiveMemoryWarning

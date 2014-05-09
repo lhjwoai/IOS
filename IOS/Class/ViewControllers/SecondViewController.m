@@ -20,13 +20,14 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"second";
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad2];
+    [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     NSMutableDictionary *t_dic = [NSMutableDictionary dictionaryWithCapacity:0];

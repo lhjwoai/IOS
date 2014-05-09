@@ -26,10 +26,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad2];
-    // Do any additional setup after loading the view from its nib.
-    [[self rdv_tabBarItem] setBadgeValue:@""];
-    
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.    
     
     UIImageView *img = [[UIImageView alloc] init];
     img.frame = CGRectMake(40, 40, 100, 100);

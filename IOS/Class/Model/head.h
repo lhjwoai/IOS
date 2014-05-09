@@ -8,16 +8,16 @@
 
 #define SERVE_URL @"http://www.weicircle.com"
 
+#define kNavBarHeight 44
+
+#define __AppName [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)kCFBundleNameKey]
+
 //设备屏幕大小
 #define __MainScreenFrame  [[UIScreen mainScreen] bounds]
 //设备屏幕宽
 #define __MainScreen_Width  __MainScreenFrame.size.width
 //设备屏幕高 20,表示状态栏高度.如3.5inch 的高,得到的__MainScreenFrame.size.height是480,而去掉电量那条状态栏,我们真正用到的是460;
 #define __MainScreen_Height (__MainScreenFrame.size.height-20)
-
-//#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]
-//#define CurrentSystemVersion ([[UIDevice currentDevice] systemVersion])
-//#define CurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
 
 #define __AppDelegate (AppDelegate *)[[UIApplication sharedApplication] delegate]
 
@@ -30,16 +30,9 @@
 #define DLog(...)
 #endif
 
-//#define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
-//#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
-//#define isPad (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-
 #define IOS7 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7) ? YES : NO
 
 #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
-
-#pragma mark - common functions
-#define SAFE_RELEASE(obj) if(obj){[obj release];obj=nil;}
 
 #pragma mark - color functions
 #define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
