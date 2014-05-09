@@ -36,35 +36,17 @@
     // Do any additional setup after loading the view from its nib.
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    if (self.navigationController.viewControllers.count != 1) {
 
-    }
-    
     if (!IOS7) {
         [self addSwipe];
     }
-    
-//    self.navigationController.interactivePopGestureRecognizer.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-//    if (self.navigationController.viewControllers.count == 1 && !_ifInteractivePop) {
-//        [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
-//    }
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-//    if (self.navigationController.viewControllers.count == 1 && _ifInteractivePop) {
-//        [[self rdv_tabBarController] setTabBarHidden:NO animated:YES];
-//    }
+    [[SDImageCache sharedImageCache] clearMemory];
 }
 
 - (void)setLBtnHidden:(BOOL)hidden {
