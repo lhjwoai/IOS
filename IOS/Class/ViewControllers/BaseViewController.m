@@ -8,9 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController () {
-    BOOL _ifInteractivePop;
-}
+@interface BaseViewController ()
 
 @end
 
@@ -123,21 +121,5 @@
 - (void)backAction {
 	[self.navigationController popViewControllerAnimated:YES];
 }
-
-- (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer==self.navigationController.interactivePopGestureRecognizer) {
-        if (self.navigationController.viewControllers.count == 2) {
-            _ifInteractivePop = YES;
-        }
-        else {
-            _ifInteractivePop = NO;
-        }
-        if (self.navigationController.viewControllers.count < 2 || self.navigationController.visibleViewController == [self.navigationController.viewControllers objectAtIndex:0]) {
-            return NO;
-        }
-    }
-    return YES;
-}
-
 
 @end
